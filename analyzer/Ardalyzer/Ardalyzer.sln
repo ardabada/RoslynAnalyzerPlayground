@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ardalyzer", "Ardalyzer\Ardalyzer\Ardalyzer.csproj", "{537C7AFC-FB0D-42EB-957E-7501246547BB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ardalyzer.CodeFixes", "Ardalyzer\Ardalyzer.CodeFixes\Ardalyzer.CodeFixes.csproj", "{25C34622-523D-47C6-986E-E894F4F9F821}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ardalyzer.Package", "Ardalyzer\Ardalyzer.Package\Ardalyzer.Package.csproj", "{E79EABFF-99CE-4F12-93F4-02F044CA1DD3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ardalyzer.Test", "Ardalyzer\Ardalyzer.Test\Ardalyzer.Test.csproj", "{0D8A6548-88AC-479A-BFC6-5F7EBCC7BC11}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ardalyzer.Vsix", "Ardalyzer\Ardalyzer.Vsix\Ardalyzer.Vsix.csproj", "{6D50F1D4-A6BB-49A8-BE5F-95403B345FA4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{537C7AFC-FB0D-42EB-957E-7501246547BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{537C7AFC-FB0D-42EB-957E-7501246547BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{537C7AFC-FB0D-42EB-957E-7501246547BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{537C7AFC-FB0D-42EB-957E-7501246547BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{25C34622-523D-47C6-986E-E894F4F9F821}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{25C34622-523D-47C6-986E-E894F4F9F821}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{25C34622-523D-47C6-986E-E894F4F9F821}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{25C34622-523D-47C6-986E-E894F4F9F821}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E79EABFF-99CE-4F12-93F4-02F044CA1DD3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E79EABFF-99CE-4F12-93F4-02F044CA1DD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E79EABFF-99CE-4F12-93F4-02F044CA1DD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E79EABFF-99CE-4F12-93F4-02F044CA1DD3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D8A6548-88AC-479A-BFC6-5F7EBCC7BC11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D8A6548-88AC-479A-BFC6-5F7EBCC7BC11}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D8A6548-88AC-479A-BFC6-5F7EBCC7BC11}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D8A6548-88AC-479A-BFC6-5F7EBCC7BC11}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D50F1D4-A6BB-49A8-BE5F-95403B345FA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D50F1D4-A6BB-49A8-BE5F-95403B345FA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D50F1D4-A6BB-49A8-BE5F-95403B345FA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D50F1D4-A6BB-49A8-BE5F-95403B345FA4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D2914A9A-338A-4ACB-B70B-32890F428DCA}
+	EndGlobalSection
+EndGlobal
