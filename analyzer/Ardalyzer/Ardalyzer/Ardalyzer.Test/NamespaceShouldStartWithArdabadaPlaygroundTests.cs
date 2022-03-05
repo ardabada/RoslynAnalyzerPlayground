@@ -27,12 +27,34 @@ namespace Ardalyzer.Test.Analyzers
         [Fact]
         public async Task NamespaceDoestNotStartWithArdabadaPlayground_ShouldReportDiagnostics()
         {
-            var before = @"namespace Sample { }";
-            var after = @"namespace Ardabada.Playground.Sample { }";
-            var expected =
-            VerifyCS
+            var before = @"using System;
+
+namespace Sample
+{
+    class Test { }
+}";
+            var after = @"using System;
+
+namespace Ardabada.Playground.Sample
+{
+    class Test { }
+}";
+            var expected = VerifyCS
                 .Diagnostic()
-                .WithSpan(1, 11, 1, 17)
+                .WithSpan(3, 11, 3, 17)
+                .WithMessage("Namespace \"Sample\" should start with Ardabada.Playground");
+
+            await VerifyCS.VerifyCodeFixAsync(before, expected, after);
+        }
+
+        [Fact]
+        public async Task CodeFix_ShouldPreserveLeadingAndEndingTrivia()
+        {
+            var before = @"namespace   Sample  { }";
+            var after = @"namespace   Ardabada.Playground.Sample  { }";
+            var expected = VerifyCS
+                .Diagnostic()
+                .WithSpan(1, 13, 1, 19)
                 .WithMessage("Namespace \"Sample\" should start with Ardabada.Playground");
 
             await VerifyCS.VerifyCodeFixAsync(before, expected, after);
