@@ -1,17 +1,17 @@
-﻿using System.Collections.Immutable;
+﻿using System;
+using System.Collections.Immutable;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.CodeAnalysis.Diagnostics;
 using Ardalyzer.Utilities;
-using System;
 
 namespace Ardalyzer
 {
     [DiagnosticAnalyzer(LanguageNames.CSharp)]
     public class NamespaceShouldStartWithArdabadaPlayground : DiagnosticAnalyzer
     {
-        private const string ExpectedNamespace = "Ardabada.Playground";
+        public const string ExpectedNamespace = "Ardabada.Playground";
 
         public override ImmutableArray<DiagnosticDescriptor> SupportedDiagnostics =>
             ImmutableArray.Create(Descriptors.ARDA001_NamespaceShouldStartWithArdabadaPlayground);

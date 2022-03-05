@@ -27,10 +27,10 @@ namespace Ardalyzer.Utilities
         public static DiagnosticDescriptor ARDA001_NamespaceShouldStartWithArdabadaPlayground { get; } =
             Rule(
                 "ARDA001",
-                "Namespace should start with Ardabada.Playground",
+                $"Namespace should start with {NamespaceShouldStartWithArdabadaPlayground.ExpectedNamespace}",
                 Naming,
                 Warning,
-                "Namespace \"{0}\" should start with Ardabada.Playground");
+                $"Namespace \"{{0}}\" should start with {NamespaceShouldStartWithArdabadaPlayground.ExpectedNamespace}");
 
     }
 }

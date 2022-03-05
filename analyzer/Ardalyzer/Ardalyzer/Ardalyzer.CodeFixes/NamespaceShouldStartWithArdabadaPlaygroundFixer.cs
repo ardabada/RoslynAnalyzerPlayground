@@ -26,7 +26,7 @@ namespace Ardalyzer
             var root = await context.Document.GetSyntaxRootAsync(context.CancellationToken).ConfigureAwait(false);
             var syntaxNode = root.FindNode(context.Span);
             var namespaceDeclarationSyntax = syntaxNode.FirstAncestorOrSelf<NamespaceDeclarationSyntax>();
-            var replacement = "Ardabada.Playground." + namespaceDeclarationSyntax.Name.ToString();
+            var replacement = string.Format("{0}.{1}", NamespaceShouldStartWithArdabadaPlayground.ExpectedNamespace, namespaceDeclarationSyntax.Name.ToString());
             string title = string.Format(titleTemplate, replacement);
             context.RegisterCodeFix(
                 CodeAction.Create(
