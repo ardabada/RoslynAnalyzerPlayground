@@ -11,8 +11,6 @@ namespace Ardalyzer
     [DiagnosticAnalyzer(LanguageNames.CSharp)]
     public class NamespaceShouldStartWithArdabadaPlayground : DiagnosticAnalyzer
     {
-        public const string ExpectedNamespace = "Ardabada.Playground";
-
         public override ImmutableArray<DiagnosticDescriptor> SupportedDiagnostics =>
             ImmutableArray.Create(Descriptors.ARDA001_NamespaceShouldStartWithArdabadaPlayground);
 
@@ -23,11 +21,10 @@ namespace Ardalyzer
 
             context.RegisterSyntaxNodeAction(syntaxNodeContext =>
             {
-                var namespaceDeclarationSyntax = syntaxNodeContext.Node as NamespaceDeclarationSyntax;
-                if (namespaceDeclarationSyntax is null) return;
+                if (syntaxNodeContext.Node is not NamespaceDeclarationSyntax namespaceDeclarationSyntax) return;
 
                 string namespaceName = namespaceDeclarationSyntax.Name.ToString();
-                bool startWithValidPrefix = namespaceName.StartsWith(ExpectedNamespace + ".", StringComparison.Ordinal) || namespaceName.Equals(ExpectedNamespace, StringComparison.Ordinal);
+                bool startWithValidPrefix = namespaceName.StartsWith(Constants.NamespacePrefix + ".", StringComparison.Ordinal) || namespaceName.Equals(Constants.NamespacePrefix, StringComparison.Ordinal);
                 if (!startWithValidPrefix)
                 {
                     syntaxNodeContext.ReportDiagnostic(

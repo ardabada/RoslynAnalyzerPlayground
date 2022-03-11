@@ -1,4 +1,5 @@
-﻿using System.Threading;
+﻿using System.Collections.Immutable;
+using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CodeFixes;
@@ -31,6 +32,7 @@ namespace Ardalyzer.Test
             var test = new Test
             {
                 TestCode = source,
+                ReferenceAssemblies = GetReferenceAssemblies()
             };
 
             test.ExpectedDiagnostics.AddRange(expected);
@@ -52,10 +54,22 @@ namespace Ardalyzer.Test
             {
                 TestCode = source,
                 FixedCode = fixedSource,
+                ReferenceAssemblies = GetReferenceAssemblies()
             };
 
             test.ExpectedDiagnostics.AddRange(expected);
             await test.RunAsync(CancellationToken.None);
+        }
+
+        static ReferenceAssemblies GetReferenceAssemblies()
+        {
+            return ReferenceAssemblies.Default.AddPackages(ImmutableArray.Create(
+                new PackageIdentity("Microsoft.Extensions.Logging.Abstractions", "6.0.0"),
+                new PackageIdentity("Playground.Utils", "1.0.0")))
+                .AddAssemblies(ImmutableArray.Create(
+                    "Microsoft.Extensions.Logging.Abstractions",
+                    "Playground.Utils"
+                    ));
         }
     }
 }

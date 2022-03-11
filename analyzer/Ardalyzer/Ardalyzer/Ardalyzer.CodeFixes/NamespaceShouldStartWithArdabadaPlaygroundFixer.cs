@@ -13,7 +13,7 @@ namespace Ardalyzer
     [ExportCodeFixProvider(LanguageNames.CSharp, Name = nameof(NamespaceShouldStartWithArdabadaPlaygroundFixer)), Shared]
     public class NamespaceShouldStartWithArdabadaPlaygroundFixer : CodeFixProvider
     {
-        private const string titleTemplate = "Rename to {0}";
+        private const string TitleTemplate = "Rename namespace to {0}";
 
         public override ImmutableArray<string> FixableDiagnosticIds =>
             ImmutableArray.Create(Descriptors.ARDA001_NamespaceShouldStartWithArdabadaPlayground.Id);
@@ -26,8 +26,8 @@ namespace Ardalyzer
             var root = await context.Document.GetSyntaxRootAsync(context.CancellationToken).ConfigureAwait(false);
             var syntaxNode = root.FindNode(context.Span);
             var namespaceDeclarationSyntax = syntaxNode.FirstAncestorOrSelf<NamespaceDeclarationSyntax>();
-            var replacement = string.Format("{0}.{1}", NamespaceShouldStartWithArdabadaPlayground.ExpectedNamespace, namespaceDeclarationSyntax.Name.ToString());
-            string title = string.Format(titleTemplate, replacement);
+            var replacement = string.Format("{0}.{1}", Constants.NamespacePrefix, namespaceDeclarationSyntax.Name.ToString());
+            string title = string.Format(TitleTemplate, replacement);
             context.RegisterCodeFix(
                 CodeAction.Create(
                     title: title,
