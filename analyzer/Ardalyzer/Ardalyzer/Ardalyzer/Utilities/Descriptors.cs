@@ -114,10 +114,26 @@ namespace Ardalyzer.Utilities
 
         public static DiagnosticDescriptor ARDA012_ClassNotAddedToDependencyInjectionContainer { get; } =
             Rule(
-                "ARDA011",
+                "ARDA012",
                 "Class not added to dependency injection container",
                 Usage,
                 Error,
                 "Class \"{0}\" not added to dependency injection container");
+
+        public static DiagnosticDescriptor ARDA013_LoggingOfSensitiveData { get; } =
+            Rule(
+                "ARDA013",
+                "Possible sensitive data logging",
+                Usage,
+                Error,
+                "Underlying type contains sensitive data that is not ignored on logging");
+
+        public static DiagnosticDescriptor ARDA014_SensitivePropertyIsLogged { get; } =
+            Rule(
+                "ARDA014",
+                "Sensitive property is logged",
+                Usage,
+                Error,
+                "Logging of \"{0}\" that is sensitive data");
     }
 }

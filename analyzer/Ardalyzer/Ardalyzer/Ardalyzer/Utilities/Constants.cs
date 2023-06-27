@@ -12,5 +12,13 @@
         public const string DefaultLogCode = "CODE";
         public const string LogWithCodeExtensionsNamespace = "Playground.Utils.Extensions";
         public const string UtilsLoggerExtensionsType = "Playground.Utils.Extensions.LoggerExtensions";
+
+        public static readonly string[] DefaultSensitiveData = new[]
+        {
+            "password(string)",
+            "CardNumber(string)",
+            "%email%(string)",
+            "%age(int)"
+        };
     }
 }
